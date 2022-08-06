@@ -25,7 +25,7 @@ jobs:
               password ${{secrets.HEROKU_API_KEY}}
           EOF
       - name: Add heroku remote
-        run: heroku get:remote --app=${{secrets.HEROKU_APP_NAME}}
+        run: heroku get:remote --app=${{secrets.HEROKU_APP_NAME}} -y
       - name: Setup heroku env
         run: heroku config:set DATABASE_URL=${{secrets.DATABASE_URL}}
       - name: push heroku to master
