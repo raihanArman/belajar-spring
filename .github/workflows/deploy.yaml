@@ -16,7 +16,7 @@ jobs:
           java-version: '17'
       - name: Create heroku config gile
         run: |
-          cat >-/.netrc <<EOF
+          cat >~/.netrc <<EOF
           machine api.heroku.com
               login ${{secrets.HEROKU_EMAIL}}
               password ${{secrets.HEROKU_API_KEY}}
